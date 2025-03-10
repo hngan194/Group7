@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sản Phẩm</title>
+    <link rel="stylesheet" href="product.component.css">
+</head>
+<body>
+    <div class="container">
+        <h1>QUẢN LÝ SẢN PHẨM</h1>
+
+
+        <!-- Thông báo trạng thái -->
+        <div id="notification" class="hidden"></div>
+       
+        <div class="form-container">
+            <div class="product-section">
+                <h3>Tạo sản phẩm mới</h3>
+                <form id="createForm" onsubmit="handleFormSubmit(event, 'Tạo sản phẩm thành công!')">
+                    <div class="grid-container">
+                        <div class="form-group">
+                            <label>ID sản phẩm:</label>
+                            <input type="text" name="productId" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tên sản phẩm:</label>
+                            <input type="text" name="productName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Số lượng:</label>
+                            <input type="number" name="quantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Đơn giá:</label>
+                            <input type="number" name="price" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Mô tả:</label>
+                            <textarea name="description" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Phân loại:</label>
+                            <select name="category" required>
+                                <option value="">Chọn phân loại</option>
+                                <option value="backpack">Balo</option>
+                                <option value="wallet">Ví</option>
+                                <option value="cross body">Túi đeo chéo</option>
+                                <option value="tote">Túi Tote</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Image URL:</label>
+                            <input type="text" name="imageUrl">
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" class="btn-primary">Tạo sản phẩm</button>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="product-section">
+                <h3>Cập nhật sản phẩm</h3>
+                <form id="updateForm" onsubmit="handleFormSubmit(event, 'Cập nhật sản phẩm thành công!')">
+                    <div class="grid-container">
+                        <div class="form-group">
+                            <label>ID sản phẩm:</label>
+                            <input type="text" name="productId" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tên sản phẩm:</label>
+                            <input type="text" name="productName">
+                        </div>
+                        <div class="form-group">
+                            <label>Số lượng:</label>
+                            <input type="number" name="quantity">
+                        </div>
+                        <div class="form-group">
+                            <label>Đơn giá:</label>
+                            <input type="number" name="price">
+                        </div>
+                        <div class="form-group full-width">
+                            <label>Mô tả:</label>
+                            <textarea name="description" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Phân loại:</label>
+                            <select name="category">
+                                <option value="">Chọn phân loại</option>
+                                <option value="backpack">Balo</option>
+                                <option value="wallet">Ví</option>
+                                <option value="cross body">Túi đeo chéo</option>
+                                <option value="tote">Túi Tote</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Image URL:</label>
+                            <input type="text" name="imageUrl">
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" class="btn-primary">Cập nhật sản phẩm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function handleFormSubmit(event, message) {
+            event.preventDefault(); // Ngăn chặn form gửi đi
+
+
+            // Lấy phần tử thông báo
+            let notification = document.getElementById("notification");
+            notification.textContent = message;
+           
+            // Đảm bảo hiển thị thông báo
+            notification.classList.remove("hidden");
+            notification.classList.add("show");
+
+
+            // Ẩn thông báo sau 3 giây
+            setTimeout(() => {
+                notification.classList.remove("show");
+                notification.classList.add("hidden");
+            }, 3000);
+
+
+            // Reset form sau khi gửi
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
