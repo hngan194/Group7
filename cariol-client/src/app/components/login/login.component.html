@@ -8,6 +8,7 @@
     <div class="modal-body">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
+<<<<<<< HEAD
           <label for="email">Số điện thoại / Email <span class="text-danger">*</span></label>
           <input type="text" id="email" class="form-control" formControlName="email" placeholder="Nhập số điện thoại hoặc email">
 
@@ -16,18 +17,33 @@
             <small *ngIf="f['email'].errors['email']">Email không hợp lệ.</small>
           </div>
 
+=======
+          <label for="phone">Số điện thoại <span class="text-danger">*</span></label>
+          <input type="text" id="phone" class="form-control" formControlName="phone" placeholder="Nhập số điện thoại">
+
+          <div *ngIf="submitted && f['phone'].errors" class="text-danger">
+            <small *ngIf="f['phone'].errors['required']">Vui lòng nhập số điện thoại.</small>
+            <small *ngIf="f['phone'].errors['pattern']">Số điện thoại không hợp lệ.</small>
+          </div>
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
         </div>
 
         <div class="form-group">
           <label for="password">Mật khẩu <span class="text-danger">*</span></label>
           <input type="password" id="password" class="form-control" formControlName="password" placeholder="Nhập mật khẩu">
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
           <div *ngIf="submitted && f['password'].errors" class="text-danger">
             <small *ngIf="f['password'].errors['required']">Mật khẩu không được để trống.</small>
             <small *ngIf="f['password'].errors['minlength']">Mật khẩu tối thiểu 8 ký tự.</small>
           </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
         </div>
 
         <div class="forgot-password">

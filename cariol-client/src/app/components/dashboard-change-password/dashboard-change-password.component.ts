@@ -1,6 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { ChangePasswordService } from '../../services/change-password.service';
+=======
+import { ChangePasswordService } from '../_services/change-password.service';
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common'; 
 import { HttpClientModule } from '@angular/common/http'; 

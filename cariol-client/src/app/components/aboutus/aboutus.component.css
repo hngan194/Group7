@@ -2,6 +2,7 @@ body,
 html {
   padding: 0;
   margin: 0;
+<<<<<<< HEAD
   font-family: 'Poppins', Arial, sans-serif;
   background-color: #f4f4f4;
   color: #675654;
@@ -35,3 +36,23 @@ html {
 .image img:hover {
   transform: scale(1.05);
 }
+=======
+}
+.page2, .main, .page3{
+    width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.image{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.image img {
+  width: 300px;
+  margin: 20px;
+}
+
+  
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42

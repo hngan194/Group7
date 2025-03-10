@@ -3,7 +3,11 @@
     <div class="image-section">
         <img [src]="selectedImage" [alt]="product.name" class="main-image">
         <div class="image-thumbnails">
+<<<<<<< HEAD
             <img *ngFor="let img of product.images || [product.image]" 
+=======
+            <img *ngFor="let img of product.image || [product.image]" 
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
                  [src]="img" 
                  [alt]="product.name" 
                  (click)="selectImage(img)">
@@ -17,7 +21,11 @@
   
         <!-- Màu sắc -->
         <div class="color-options">
+<<<<<<< HEAD
             <div *ngFor="let color of product.colors" 
+=======
+            <div *ngFor="let color of product.color" 
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
                  class="color-circle" 
                  [style.backgroundColor]="color"
                  (click)="selectColor(color)">
@@ -50,6 +58,7 @@
     </div>
   </div>
   
+<<<<<<< HEAD
 
 <!-- Sản phẩm liên quan -->
 <div class="additional-sections" *ngIf="relatedProducts.length">
@@ -80,3 +89,5 @@
       </div>
   </div>
 </div>
+=======
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42

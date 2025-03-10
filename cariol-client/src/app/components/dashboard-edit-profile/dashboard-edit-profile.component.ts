@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { DashboardService } from '../../services/dashboard.service';
+=======
+import { DashboardService } from '../_services/dashboard.service';
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -9,7 +13,10 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
   selector: 'app-dashboard-edit-profile',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule, SidebarComponent], 
+<<<<<<< HEAD
   providers: [DashboardService],
+=======
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
   templateUrl: './dashboard-edit-profile.component.html',
   styleUrls: ['./dashboard-edit-profile.component.css']
 })

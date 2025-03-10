@@ -113,10 +113,14 @@ html, body {
     outline: none;
     font-size: 14px;
     width: 250px;
+<<<<<<< HEAD
     height: 40px;
     min-width: 250px; /* Giữ nguyên kích thước khi thay đổi viewport */
     max-width: 250px;
     box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
+=======
+    height: 40px; 
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
 }
 
 .footer-subscribe button {
@@ -127,10 +131,15 @@ html, body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+<<<<<<< HEAD
     height: 40px;
     width: 90px;
     min-width: 90px; /* Cố định kích thước */
     max-width: 90px;
+=======
+    height: 40px; 
+    width: 90px;
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
     transition: background 0.3s;
 }
 

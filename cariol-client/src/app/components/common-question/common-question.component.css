@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 .faq-container {
@@ -61,4 +62,31 @@
     opacity: 1; /* Luôn hiển thị */
     padding: 10px;
     transition: none; /* Loại bỏ hiệu ứng mở rộng */
+=======
+.faq-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin-left: 20px;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-item h3 {
+  font-style: italic;
+  color: #675654;
+  font-weight: bolder;
+}
+
+.faq-item p {
+  color: grey;
+}
+
+.faq-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  color: #675654;
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
 }

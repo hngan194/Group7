@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+<<<<<<< HEAD
+=======
+import { CommonModule } from '@angular/common';
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
 import { ActivatedRoute } from '@angular/router';
 
 interface OrderState {

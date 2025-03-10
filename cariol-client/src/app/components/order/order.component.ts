@@ -3,6 +3,11 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { LocationService } from '../../services/location.service';
+<<<<<<< HEAD
+=======
+import { CommonModule } from '@angular/common';
+
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
 
 @Component({
   selector: 'app-order',
