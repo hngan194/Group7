@@ -9,7 +9,11 @@ import { OrderComponent } from './components/order/order.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { ProductsComponent } from './components/products/products.component';
+<<<<<<< HEAD
 import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
+=======
+
+>>>>>>> 7e7feca6fa3c92e6242233d08162b91bde293e42
 const routes : Routes = [
   { path: "aboutus", component: AboutusComponent },
   { path: "blog", component: BlogComponent},
