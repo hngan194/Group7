@@ -9,12 +9,12 @@ import { OrderComponent } from './components/order/order.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { ProductsComponent } from './components/products/products.component';
-import {BlogDetailComponent} from './components/blog-detail/blog-detail.component'
+import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 const routes : Routes = [
   { path: "aboutus", component: AboutusComponent },
   { path: "blog", component: BlogComponent},
-  { path: 'blogs/:_id', component: BlogDetailComponent }, 
   { path: '', component: HomepageComponent }, // Trang chủ
+  { path: 'blog-detail/:id', component: BlogDetailComponent },  // Thêm route cho blog detail
   { path: 'product/:id', component: ProductDetailsComponent }, // Chi tiết sản phẩm
   { path: 'order', component: OrderComponent },
   { path: 'payment', component: PaymentComponent },

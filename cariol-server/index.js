@@ -42,6 +42,22 @@ client.connect()
         res.status(500).send("Error retrieving blogs");
       }
     });
+    app.get("/blogs/:id", async (req, res) => {
+      const blogId = req.params.id;
+      try {
+        const blog = await blogsCollection.findOne({ _id: new ObjectId(blogId) });
+        if (blog) {
+          // Chuyển đổi _id từ ObjectId thành chuỗi để dễ sử dụng trong frontend
+          blog._id = blog._id.toString();
+          res.send(blog);
+        } else {
+          res.status(404).send({ message: "Blog not found" });
+        }
+      } catch (error) {
+        res.status(500).send("Error retrieving blog");
+      }
+    });
+    
 
     // Khởi động server sau khi kết nối thành công
     app.listen(port, () => {

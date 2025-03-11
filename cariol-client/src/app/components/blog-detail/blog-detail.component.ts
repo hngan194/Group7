@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { BlogService } from '../../services/blog.service';
+import { ActivatedRoute } from '@angular/router';  // Import ActivatedRoute
+import { BlogService } from '../../services/blog.service';  // Import BlogService
 
 @Component({
   selector: 'app-blog-detail',
@@ -9,23 +9,24 @@ import { BlogService } from '../../services/blog.service';
   styleUrls: ['./blog-detail.component.css']
 })
 export class BlogDetailComponent implements OnInit {
-  blog: any;
+  blog: any = {};  // Mảng lưu thông tin của blog
 
-  constructor(
-    private _activatedRoute: ActivatedRoute,
-    private _bservice: BlogService
-  ) {}
+  constructor(private route: ActivatedRoute, private blogService: BlogService) { }
 
   ngOnInit(): void {
-    const blogId = this._activatedRoute.snapshot.paramMap.get('_id');
+    const blogId = this.route.snapshot.paramMap.get('id');
+    console.log('Blog ID từ URL:', blogId);  // Kiểm tra blogId
+  
     if (blogId) {
-      this._bservice.getBlogById(blogId).subscribe((data) => {
-        this.blog = data;
-      });
+      this.blogService.getBlogById(blogId).subscribe(
+        (data) => {
+          console.log('Dữ liệu blog nhận được:', data);  // Kiểm tra dữ liệu trả về từ API
+          this.blog = data;  // Lưu vào biến blog
+        },
+        (error) => {
+          console.error('Không thể lấy dữ liệu blog chi tiết', error);
+        }
+      );
     }
-  }
-   // Hàm quay lại trang danh sách blog
-   goBack(): void {
-    window.history.back(); // Quay lại trang trước
   }
 }

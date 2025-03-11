@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../../services/blog.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { BlogService } from '../../services/blog.service';  // Import BlogService
+import { Router } from '@angular/router';  // Import Router
 
 @Component({
   selector: 'app-blog',
@@ -9,50 +9,24 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  blogs: any[] = [];
-  selectedCode: any;
+  blogs: any[] = [];  // Mảng để lưu danh sách các blog
 
-  constructor(
-    private _activatedRoute: ActivatedRoute,
-    private _router: Router,
-    private _bservice: BlogService
-  ) {}
+  constructor(private blogService: BlogService, private router: Router) { }
 
-  ngOnInit() {
-    // Lấy tất cả các blog từ BlogService
-    this._bservice.getBlogs().subscribe({
-      next: (data) => { 
-        this.blogs = data;
-        
-        // Nếu có _id từ URL, chọn blog tương ứng
-        if (this.selectedCode) {
-          this.selectBlogById(this.selectedCode);
-        }
+  ngOnInit(): void {
+    // Gọi hàm getBlogs() để lấy danh sách blog
+    this.blogService.getBlogs().subscribe(
+      (data: any[]) => {
+        this.blogs = data;  // Lưu dữ liệu vào mảng blogs
       },
-      error: (err) => { console.log(err); }
-    });
-
-    // Lấy _id từ URL (nếu có) khi trang được tải
-    this._activatedRoute.paramMap.subscribe((params) => {
-      let code = params.get("_id");
-      if (code != null) {
-        this.selectedCode = code;
-        // Lọc blog tương ứng khi có _id từ URL
-        this.selectBlogById(code);
+      error => {
+        console.error("Có lỗi khi lấy dữ liệu blog:", error);
       }
-    });
+    );
   }
 
-  // Hàm để lọc và chọn blog theo ID
-  selectBlogById(id: any) {
-    const selectedBlog = this.blogs.find(blog => blog._id === id);
-    if (selectedBlog) {
-      console.log("Selected Blog:", selectedBlog);
-    }
-  }
-
-  // Hàm chuyển hướng đến chi tiết của một bài viết
-  someFunction(blog: any): void {
-    this._router.navigate(["/blogs", blog._id]);
+  // Hàm xử lý khi click vào một bài blog
+  onBlogClick(blogId: string): void {
+    this.router.navigate(['/blog-detail', blogId]);  // Điều hướng đến blog detail với blogId
   }
 }

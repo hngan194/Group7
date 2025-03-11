@@ -19,13 +19,14 @@ import { OrderComponent } from './components/order/order.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { ProductsComponent } from './components/products/products.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
 
 // Các service
 import { AuthService } from './services/auth.service';
 import { AlertService } from './services/alert.service';
 import { ProductService } from './services/product.service';
 import { CartService } from './services/cart.service';
-import { BlogDetailComponent } from './components/blog-detail/blog-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { BlogDetailComponent } from './components/blog-detail/blog-detail.compon
     PaymentComponent,
     ProductsComponent,
     FooterComponent,
-    BlogDetailComponent
+    BlogDetailComponent,
   ],
   imports: [
     BrowserModule,
